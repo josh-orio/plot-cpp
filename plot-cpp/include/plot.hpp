@@ -61,8 +61,6 @@ public:
       python::start();
     }
 
-    std::cout << data << std::endl;
-
     // copy data dict to python
     PyObject *main_module = PyImport_AddModule("__main__");
     PyObject *main_dict = PyModule_GetDict(main_module);
@@ -79,7 +77,7 @@ public:
         "\tif type(data_dict[key]) == str:\n"
         // if string, add extra quotes
         "\t\tdata_dict[key] = \"'\" + data_dict[key] + \"'\"\n"
-        "\texec(key + \" = \" + str(data_dict[key]))";
+        "\texec(key + \" = \" + str(data_dict[key]))\n";
     PyRun_SimpleString(loading_shader.c_str());
 
     // run the 'real' shader

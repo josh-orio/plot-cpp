@@ -25,7 +25,6 @@ int main() {
 
   // create plot with 'autorun' enabled, this should be the default
   Plot plot3("../shader.py", data_dict.dump(), true);
-  std::cout << "graphed" << std::endl;
 
   return 0;
 }
