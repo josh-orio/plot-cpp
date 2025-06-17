@@ -23,3 +23,14 @@ git clone https://github.com/josh-orio/cplotlib
 cd cplotlib
 make
 ```
+
+Then link the library with your project using:
+```cmake
+find_package(cplotlib REQUIRED)
+target_link_libraries(${PROJECT_NAME} PRIVATE cplotlib::cplotlib)
+```
+
+And you can access all the interfaces by:
+```c++
+#include <cplotlib/plot.hpp>
+```
